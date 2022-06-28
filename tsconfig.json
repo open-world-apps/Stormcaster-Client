@@ -15,6 +15,12 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/api/openWeatherMapAPI.mjs",
+    "src/pages/api/openWeatherMapAPI.ja"
+  ],
   "exclude": ["node_modules"]
 }
