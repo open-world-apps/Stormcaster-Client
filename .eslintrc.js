@@ -43,6 +43,7 @@ module.exports = {
     "no-underscore-dangle": 0,
     "react/prop-types": 0,
     "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
     "array-element-newline": [
       "error",
       {
