@@ -1,16 +1,25 @@
-import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-import navReducer from '../reducers/navSlice';
-import userReducer from '../reducers/userSlice';
-import weatherReducer from '../reducers/weatherSlice';
+import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import navReducer from "../reducers/navSlice";
+import userReducer from "../reducers/userSlice";
+import weatherReducer from "../reducers/weatherSlice";
 
 export const store = configureStore({
-   reducer: {
-      navigation: navReducer,
-      user: userReducer,
-      weather: weatherReducer,
-   }
+  reducer: {
+    navigation: navReducer,
+    user: userReducer,
+    weather: weatherReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
