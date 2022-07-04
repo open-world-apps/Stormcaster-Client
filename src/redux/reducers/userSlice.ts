@@ -7,15 +7,11 @@ export type Location = {
 interface UserState {
   location: Location;
   loggedIn: boolean;
-  unitSystem: string;
-  language: string;
 }
 
 const initialState: UserState = {
   location: {},
   loggedIn: false,
-  unitSystem: "imperial",
-  language: "",
 };
 
 const userSlice = createSlice({

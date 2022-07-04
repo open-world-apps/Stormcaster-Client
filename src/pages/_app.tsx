@@ -6,6 +6,7 @@ import type { AppProps } from "next/app";
 import "../styles/css/globals.css";
 import "../styles/css/normalize.css";
 
+import { UserProvider } from "../util/context/UserContext";
 import { store } from "../redux/app/store";
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }): ReactElement => {
@@ -18,9 +19,11 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }): ReactElement => {
   });
 
   return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+    <UserProvider>
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </UserProvider>
   );
 };
 
