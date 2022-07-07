@@ -1,24 +1,22 @@
-import axios from "axios";
+import axios from 'axios';
 
-import envLoader from "../envLoader";
-
-envLoader();
+import type { WeatherState } from '../../redux/reducers/weatherSlice';
 
 type ReturnPromise = (
   location: string | string[],
-  language: string | string[]
-) => Promise<void>;
+  language: string | string[],
+  units: string | string[]
+) => Promise<WeatherState>;
 
-const weatherFetcher: ReturnPromise = async (location, language) => {
+const weatherFetcher: ReturnPromise = async (location, language, units) => {
   const _location = JSON.parse(location.toString());
   const res = await axios.get(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${_location.latitude}&lon=${_location.longitude}&appid=${process.env.OW_KEY}&lang=${language}`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${_location.lat}&lon=${_location.lon}&units=${units}&appid=${process.env.NEXT_PUBLIC_OW_KEY}&lang=${language}`
   );
-  const data = await res.data;
 
-  if (res.status !== 200) throw new Error(data.message);
+  if (res.status !== 200) throw new Error(res.data.message);
 
-  return data;
+  return res.data;
 };
 
 export default weatherFetcher;
