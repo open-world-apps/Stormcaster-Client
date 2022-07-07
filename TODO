@@ -1,0 +1,30 @@
+Client:
+  Components:
+    ☐ Create the rest of the weather components.
+    Weather components: @critical
+      ✔ Numeric: number @done(22-07-07 11:47)
+        * Numeric will feature automatic value conversion based on user's set System.
+      ☐ Symbol: Measurement
+      ☐ WindDirection: Direction
+      ☐ Sunrise: DT
+      ☐ Sunset: DT
+      ☐ WeatherDescription
+      ☐ Icon
+      ☐ Location
+  Weather:
+    src/component
+    ☐ Implement Next Routes using SWR.
+    ☐ Move Temperature to WeatherView.
+  WeatherView:
+    src/layout
+    ☐ Layout weather components.
+Backend:
+  ASP.NET Core
+  Database:
+    ☐ Config
+    Models:
+      ☐ Weather
+      ☐ User
+  API:
+    ☐ Weather CRUD
+    ☐ User CRUD

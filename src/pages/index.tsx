@@ -6,6 +6,8 @@ import Cookie from "js-cookie";
 
 import styles from "../styles/Home.module.css";
 
+import Weather from "../ui/components/Weather";
+
 import { useAppDispatch } from "../redux/app/hooks";
 import { updateLocation } from "../redux/reducers/userSlice";
 
@@ -27,7 +29,9 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <Weather />
+      </main>
 
       <footer className={styles.footer}>
         <a
