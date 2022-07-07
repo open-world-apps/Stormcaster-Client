@@ -55,6 +55,7 @@ module.exports = {
     "no-plusplus": 0,
     "no-param-reassign": 0,
     "react/react-in-jsx-scope": 0,
+    "lines-between-class-members": 0,
   },
   settings: {
     "import/resolver": {
