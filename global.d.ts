@@ -12,16 +12,7 @@ declare global {
     | `${number}${Degree} ${Directional}`
     | `${number} ${Directional}`
     | Directional;
-  type Temperature =
-    | Celsius
-    | Fahrenheit
-    | Kelvin
-    | "C"
-    | "c"
-    | "F"
-    | "f"
-    | "K"
-    | "k";
+  type Temperature = Celsius | Fahrenheit | Kelvin | "C" | "c" | "F" | "f" | "K" | "k";
   type MeasurementSymbol = Temperature | Direction;
   type Coordinates =
     | {
